@@ -1,6 +1,10 @@
 export const hero = {
-  title: "Your fast track to top placements.",
-  subtitle: "Learn with industry-expert courses, follow Corporate Pathways built for your dream companies, and build a CTC Score that gets you noticed.",
+  title: "Your Fast Track to Top Placements.",
+  titleLine1: "Your Fast Track to",
+  titleLine2: "Top Placements.",
+  subtitle: "Upskill with industry-expert courses and master Corporate Pathways built for your dream companies. Build a CTC Score that gets you noticed.",
+  descriptionParagraph1: "Upskill with industry-expert courses and master Corporate Pathways built for your dream companies.",
+  descriptionParagraph2: "Build a CTC Score that gets you noticed.",
   note: "Free student plan. No credit card needed.",
   score: {
     value: 8.4,

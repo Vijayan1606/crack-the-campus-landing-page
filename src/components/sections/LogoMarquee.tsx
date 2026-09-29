@@ -1,13 +1,14 @@
-import { companies } from "@/data/companies";
+import React from "react";
+import { row1Companies, row2Companies } from "@/data/companies";
 
 export function LogoMarquee() {
-  const row1 = companies.slice(0, 9);
-  const row2 = companies.slice(9);
+  const track1 = [...row1Companies, ...row1Companies, ...row1Companies, ...row1Companies];
+  const track2 = [...row2Companies, ...row2Companies];
 
   return (
-    <section className="marquee-container" aria-label="Trusted Companies and Corporate Pathways">
+    <section className="marquee-container" aria-label="Recruiting Companies">
       <h2 className="marquee-heading">
-        POWERING HIRING BENCHMARKS FOR TOP RECRUITERS &amp; CORPORATE PATHWAYS
+        EMPOWERING STUDENTS TO CRACK RECRUITMENT AT...
       </h2>
 
       {/* Edge gradient masks for smooth fade */}
@@ -17,11 +18,14 @@ export function LogoMarquee() {
       {/* First Track (Scroll Left) */}
       <div className="marquee-track-wrapper">
         <div className="marquee-track">
-          {row1.concat(row1).map((company, idx) => (
+          {track1.map((company, idx) => (
             <div
               key={`${company.name}-1-${idx}`}
               className="logo-item"
               title={company.name}
+              style={{
+                "--brand-color": company.color,
+              } as React.CSSProperties}
             >
               <svg
                 viewBox={company.viewBox}
@@ -41,11 +45,14 @@ export function LogoMarquee() {
       {/* Second Track (Scroll Right) */}
       <div className="marquee-track-wrapper">
         <div className="marquee-track-reverse">
-          {row2.concat(row2).map((company, idx) => (
+          {track2.map((company, idx) => (
             <div
               key={`${company.name}-2-${idx}`}
               className="logo-item"
               title={company.name}
+              style={{
+                "--brand-color": company.color,
+              } as React.CSSProperties}
             >
               <svg
                 viewBox={company.viewBox}

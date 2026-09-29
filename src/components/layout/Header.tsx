@@ -35,11 +35,15 @@ export function Header() {
 
         {/* Desktop Actions */}
         <div className="header-actions">
-          <Link href={authLinks.login.href} className="btn-ghost">
-            {authLinks.login.label}
-          </Link>
-          <Button href={authLinks.signup.href} variant="primary">
+          <div className="header-nav-divider" />
+          <Link href={authLinks.signup.href} className="header-nav-link">
             {authLinks.signup.label}
+          </Link>
+          <Link href={authLinks.contact.href} className="header-nav-link">
+            {authLinks.contact.label}
+          </Link>
+          <Button href={authLinks.login.href} variant="primary" className="btn-header-login">
+            {authLinks.login.label}
           </Button>
         </div>
 
@@ -78,21 +82,27 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href={authLinks.signup.href}
+              className="mobile-drawer-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              {authLinks.signup.label}
+            </Link>
+            <Link
+              href={authLinks.contact.href}
+              className="mobile-drawer-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              {authLinks.contact.label}
+            </Link>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "1rem", paddingTop: "1rem", borderTop: "1px solid var(--border-default)" }}>
-              <Link
-                href={authLinks.login.href}
-                className="btn-ghost"
-                style={{ textAlign: "center", width: "100%", paddingBlock: "0.75rem" }}
-                onClick={() => setMobileOpen(false)}
-              >
-                {authLinks.login.label}
-              </Link>
               <Button
-                href={authLinks.signup.href}
+                href={authLinks.login.href}
                 variant="primary"
                 onClick={() => setMobileOpen(false)}
               >
-                {authLinks.signup.label}
+                {authLinks.login.label}
               </Button>
             </div>
           </div>

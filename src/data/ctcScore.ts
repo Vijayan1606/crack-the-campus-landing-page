@@ -17,19 +17,10 @@ export interface ScoreTier {
 }
 
 export const ctcScoreData = {
-  label: "The Why",
+  label: "THE WHY",
   heading: "Beyond the Resume: The CTC Score.",
   subheading:
     "Give recruiters a defensible, institution-grade signal. Web Hub builds the foundation; Pro-Suite verifies performance, rolled into one credential.",
-  summary: {
-    title: "CTC Score",
-    scale: "0.0 to 10.0",
-    bullets: [
-      "Web Hub contributes skills and practice telemetry.",
-      "Pro-Suite supplies proctored software performance.",
-      "Together they produce one verified credential recruiters can rely on.",
-    ],
-  },
   pillars: [
     {
       title: "Skills",
@@ -44,12 +35,20 @@ export const ctcScoreData = {
       source: "Continuous Drills",
     },
     {
-      title: "Software Performance",
+      title: "Software performance",
       badgeImg: "/badges/badge-software.png",
       description: "Proctored outcomes and high-stakes results from the Pro-Suite environment.",
       source: "Pro-Suite Integrity",
     },
   ] satisfies ScorePillar[],
+  result: {
+    title: "CTC Score",
+    scale: "0.0 to 10.0",
+    badgeImg: "/badges/badge-ctc-hero.png",
+    textPrefix: "Web Hub contributes skills and practice telemetry. Pro-Suite supplies proctored software performance. Together they produce one ",
+    textHighlight: "verified credential",
+    textSuffix: " recruiters can rely on.",
+  },
   tiers: [
     {
       range: "8.5 – 10.0",

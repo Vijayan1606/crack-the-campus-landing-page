@@ -1,87 +1,68 @@
 export interface FaqItem {
   id: string;
-  category: "all" | "students" | "ctc-score" | "proctoring" | "colleges";
   question: string;
   answer: string;
 }
 
-export const faqCategories = [
-  { id: "all", label: "All Questions" },
-  { id: "students", label: "Students & Placement" },
-  { id: "ctc-score", label: "CTC Score" },
-  { id: "proctoring", label: "Proctored Testing" },
-  { id: "colleges", label: "Colleges & Institutes" },
-];
-
 export const faqsData: FaqItem[] = [
   {
     id: "what-is-ctc",
-    category: "students",
     question: "What is Crack The Campus?",
     answer:
       "Crack The Campus (CTC) is India's campus-to-career platform that helps engineering students prepare for placements through AI-proctored assessments, structured coding and aptitude practice, skill courses, contests, a recruiter-trusted CTC Score, and job opportunities.",
   },
   {
     id: "who-is-ctc-for",
-    category: "students",
     question: "Who is Crack The Campus for?",
     answer:
       "Crack The Campus is built for engineering students preparing for campus placements and internships, and for colleges that need secure assessments, student performance analytics, and placement-readiness tracking.",
   },
   {
     id: "what-is-ctc-score",
-    category: "ctc-score",
     question: "What is the CTC Score?",
     answer:
       "The CTC Score is a composite placement-readiness credential on Crack The Campus. It reflects a student's skills, practice consistency, assessment performance, and verified proctored test results — designed to help recruiters quickly identify job-ready candidates.",
   },
   {
     id: "how-ctc-helps-placements",
-    category: "students",
     question: "How does Crack The Campus help with campus placements?",
     answer:
       "Students practice aptitude, coding, and technical rounds through timed assessments that mirror real hiring patterns. Colleges can run secure proctored exams, track readiness dashboards, and students can build a CTC Score and apply to opportunities via Job Desk.",
   },
   {
     id: "aptitude-coding-support",
-    category: "students",
     question: "Does Crack The Campus support aptitude and coding preparation?",
     answer:
       "Yes. The platform covers aptitude, coding, technical preparation, structured learning modules in Skill Center, live contests, archived practice, and AI-guided learning — not coding alone.",
   },
   {
     id: "proctoring-mechanism",
-    category: "proctoring",
     question: "How are assessments proctored on Crack The Campus?",
     answer:
       "High-stakes assessments run in the Crack The Campus desktop suite (Windows, macOS, Linux) with AI proctoring and integrity monitoring. This provides a secure, controlled environment similar to real company hiring tests.",
   },
   {
     id: "is-there-free-plan",
-    category: "students",
     question: "Is there a free plan on Crack The Campus?",
     answer:
-      "Yes. Crack The Campus offers a free student plan with no time limit. Students can explore courses, practice, and use core features without a credit card. Paid plans unlock additional premium capabilities and deep pathway assessments.",
+      "Yes. Crack The Campus offers a free student plan with no time limit. Students can explore courses, practice, and use core features without a credit card. Paid plans unlock additional premium capabilities.",
   },
   {
     id: "colleges-institutions",
-    category: "colleges",
     question: "Can colleges and institutions use Crack The Campus?",
     answer:
       "Yes. Institutions get an admin suite for assessment creation, batch management, AI-proctored exams, curriculum enrichment, placement analytics, and student engagement reporting. Visit crackthecampus.com/institution for details.",
   },
   {
     id: "different-from-generic-sites",
-    category: "students",
     question: "How is Crack The Campus different from generic practice websites?",
     answer:
       "Unlike standalone practice sites, CTC combines structured learning, timed proctored assessments, contests, recruiter-trusted scoring, institutional dashboards, and job-related outcomes in one campus-to-career ecosystem.",
   },
   {
     id: "desktop-suite-download",
-    category: "proctoring",
     question: "Where can I download the Crack The Campus software?",
     answer:
-      "Download the desktop suite for Windows, macOS, or Linux at crackthecampus.com/download. The software is required for secure proctored assessments and generating your verified CTC Score credential.",
+      "Download the desktop suite for Windows, macOS, or Linux at crackthecampus.com/download. The software is required for secure proctored assessments.",
   },
 ];

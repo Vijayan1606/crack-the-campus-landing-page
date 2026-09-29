@@ -7,24 +7,22 @@ export const navLinks: Cta[] = [
   { label: "Download", href: "/download" },
 ];
 
-export const authLinks = { login: { label: "Login", href: "/login" }, signup: { label: "Sign up", href: "/signup" } };
+export const rightNavLinks: Cta[] = [
+  { label: "Signup", href: "/signup" },
+  { label: "Contact", href: "/contact" },
+];
 
-export const footerGroups: { title: string; links: Cta[] }[] = [
-  {
-    title: "Product",
-    links: [
-      { label: "Explore courses", href: "/explore" },
-      { label: "Download suite", href: "/download" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Documentation", href: "/documentation" },
-      { label: "FAQ", href: "#faq" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
-    ],
-  },
+export const authLinks = {
+  login: { label: "Login", href: "/login" },
+  signup: { label: "Signup", href: "/signup" },
+  contact: { label: "Contact", href: "/contact" },
+};
+
+export const footerProductLinks: Cta[] = [
+  { label: "Explore courses", href: "/explore" },
+  { label: "Download suite", href: "/download" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Documentation", href: "/documentation" },
+  { label: "Ecosystem", href: "#ecosystem" },
+  { label: "FAQ", href: "#faq" },
 ];
