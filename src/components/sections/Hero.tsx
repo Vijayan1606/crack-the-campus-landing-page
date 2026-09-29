@@ -7,6 +7,7 @@ export function Hero() {
   return (
     <section className="hero-wrapper" aria-labelledby="hero-heading">
       {/* Background office scene */}
+      
       <div className="hero-bg-media" aria-hidden="true">
         <div className="hero-bg-img-wrap">
           <Image
