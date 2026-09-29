@@ -338,7 +338,7 @@ Lighthouse testing was performed against the **deployed production version** of 
 ### Performance Highlights
 
 - **Desktop Performance:** 100
-- **Mobile Performance:** 97
+- **Mobile Performance:** 98
 - **Desktop SEO:** 100
 - **Mobile SEO:** 100
 - **Desktop Accessibility:** 96
