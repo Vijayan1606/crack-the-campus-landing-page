@@ -353,7 +353,7 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 4.5rem;
+  min-height: 4.25rem;
   gap: 1.5rem;
 }
 
@@ -366,10 +366,10 @@ img, svg {
 .header-nav {
   display: none;
   align-items: center;
-  gap: clamp(1.75rem, 2.75vw, 2.75rem);
+  gap: clamp(1.25rem, 2vw, 2rem);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 860px) {
   .header-nav {
     display: flex;
   }
@@ -377,10 +377,11 @@ img, svg {
 
 .header-nav-link {
   font-family: var(--font-sans, 'Plus Jakarta Sans'), var(--font-sans-fallback);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #a1a1aa;
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .header-nav-link:hover {
@@ -390,10 +391,11 @@ img, svg {
 .header-actions {
   display: none;
   align-items: center;
-  gap: 1.25rem;
+  gap: clamp(1rem, 1.5vw, 1.35rem);
+  flex-shrink: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 860px) {
   .header-actions {
     display: flex;
   }
@@ -401,29 +403,31 @@ img, svg {
 
 .header-nav-divider {
   width: 1px;
-  height: 18px;
+  height: 16px;
   background-color: rgba(255, 255, 255, 0.18);
-  margin-right: 0.25rem;
+  margin-inline: 0.25rem;
 }
 
 .btn-header-login {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 38px;
-  padding: 0.45rem 1.45rem;
+  min-height: 36px;
+  padding: 0.45rem 1.4rem;
+  font-family: var(--font-sans, 'Plus Jakarta Sans'), var(--font-sans-fallback);
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   background-color: #7C3AED;
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
-  transition: transform var(--transition-fast), filter var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), filter var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .btn-header-login:hover {
   background-color: #6D28D9;
-  filter: brightness(1.06);
+  filter: brightness(1.08);
   box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
   transform: translateY(-1px);
 }
@@ -441,7 +445,7 @@ img, svg {
   color: var(--text-primary);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 860px) {
   .mobile-nav-toggle {
     display: none;
   }

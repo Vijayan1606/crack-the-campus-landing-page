@@ -33,6 +33,20 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Desktop Actions */}
+        <div className="header-actions">
+          <div className="header-nav-divider" />
+          <Link href={authLinks.signup.href} className="header-nav-link">
+            {authLinks.signup.label}
+          </Link>
+          <Link href={authLinks.contact.href} className="header-nav-link">
+            {authLinks.contact.label}
+          </Link>
+          <Button href={authLinks.login.href} variant="primary" className="btn-header-login">
+            {authLinks.login.label}
+          </Button>
+        </div>
+
         {/* Mobile Toggle Button */}
         <button
           type="button"
