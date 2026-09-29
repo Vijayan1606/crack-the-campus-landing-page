@@ -351,11 +351,11 @@ Lighthouse testing was performed against the **deployed production version** of 
 
 #### Desktop
 
-![Lighthouse Desktop Results](./docs/desktop.png)
+![Lighthouse Desktop Results](./public/docs/desktop.png)
 
 #### Mobile
 
-![Lighthouse Mobile Results](./docs/mobile.png)
+![Lighthouse Mobile Results](./public/docs/mobile.png)
 
 > Lighthouse scores can vary slightly between runs depending on network conditions, device performance, browser state, and other environmental factors.
 
