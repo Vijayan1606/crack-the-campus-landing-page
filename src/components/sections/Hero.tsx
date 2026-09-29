@@ -5,35 +5,41 @@ import { site } from "@/data/site";
 
 export function Hero() {
   return (
-    <section className="hero-wrapper" aria-label="Hero Section">
+    <section className="hero-wrapper" aria-labelledby="hero-heading">
       {/* Background office scene */}
-      <div className="hero-bg-media">
-        <Image
-          src="/hero-promo-office.jpg"
-          alt="Engineering candidate smiling in office setting"
-          fill
-          priority
-          sizes="100vw"
-        />
+      <div className="hero-bg-media" aria-hidden="true">
+        <div className="hero-bg-img-wrap">
+          <Image
+            src="/hero-promo-office.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-office-img"
+          />
+        </div>
       </div>
 
       {/* Layered dark gradients for text contrast */}
-      <div className="hero-overlay-horizontal" />
-      <div className="hero-overlay-vertical" />
+      <div className="hero-overlay-mobile" aria-hidden="true" />
+      <div className="hero-overlay-multi-stop" aria-hidden="true" />
+      <div className="hero-radial-mobile" aria-hidden="true" />
+      <div className="hero-radial-desktop" aria-hidden="true" />
 
       {/* Content Layer */}
       <div className="ctc-container hero-content">
         <div className="hero-main-column">
           {/* Vertical accent bar beside heading and description */}
           <div className="hero-quote-bar">
-            <h1 className="hero-title">
+            <h1 id="hero-heading" className="hero-title">
               {hero.titleLine1 || "Your Fast Track to"}
               <br />
               {hero.titleLine2 || "Top Placements."}
             </h1>
             <div className="hero-description-block">
               <p className="hero-description">
-                Upskill with industry-expert courses and master <strong>Corporate Pathways</strong> built for your dream companies.
+                Upskill with industry-expert courses and master{" "}
+                <strong>Corporate Pathways</strong> built for your dream companies.
               </p>
               <p className="hero-description">
                 Build a <strong>CTC Score</strong> that gets you noticed.
@@ -41,7 +47,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* CTA Buttons aligned below accent bar */}
+          {/* CTA Buttons */}
           <div className="hero-cta-group">
             <Button href={site.ctas.primary.href} variant="primary" className="hero-btn-primary">
               <span>{site.ctas.primary.label}</span>
@@ -56,8 +62,8 @@ export function Hero() {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
               </svg>
             </Button>
             <Button href={site.ctas.secondary.href} variant="secondary" className="hero-btn-secondary">
@@ -73,8 +79,8 @@ export function Hero() {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
               </svg>
             </Button>
           </div>
