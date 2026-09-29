@@ -53,6 +53,10 @@
   --transition-fast: 150ms var(--ease-smooth);
   --transition-normal: 250ms var(--ease-smooth);
   --transition-spring: 350ms var(--ease-spring);
+
+  /* Font Families */
+  --font-mono: var(--font-mono, 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  --font-sans: var(--font-sans, 'Plus Jakarta Sans', system-ui, sans-serif);
 }
 
 /* --------------------------------------------------------------------------
@@ -540,8 +544,8 @@ img, svg {
 }
 
 .hero-quote-bar {
-  border-left: 2.5px solid #7C3AED;
-  padding-left: clamp(1.25rem, 2vw, 1.75rem);
+  border-left: 2px solid rgba(124, 58, 237, 0.5);
+  padding-left: clamp(1rem, 2vw, 1.75rem);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -588,20 +592,19 @@ img, svg {
   justify-content: center;
   gap: 0.5rem;
   min-height: 48px;
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 2rem;
   border-radius: var(--radius-full);
   background-color: #7C3AED;
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.45), 0 14px 44px -10px rgba(124, 58, 237, 0.5);
   transition: transform var(--transition-fast), filter var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .hero-btn-primary:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 6px 22px rgba(124, 58, 237, 0.55);
-  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.6), 0 16px 48px -8px rgba(124, 58, 237, 0.65);
 }
 
 .hero-btn-secondary {
@@ -610,22 +613,23 @@ img, svg {
   justify-content: center;
   gap: 0.5rem;
   min-height: 48px;
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 2rem;
   border-radius: var(--radius-full);
-  background-color: rgba(40, 36, 32, 0.65);
+  background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.06), 0 10px 36px -8px rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-btn-secondary:hover {
-  background-color: rgba(55, 50, 45, 0.85);
-  border-color: rgba(255, 255, 255, 0.38);
-  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.1), 0 14px 44px -8px rgba(255, 255, 255, 0.2);
 }
 
 /* Floating Chat Action Button */
@@ -1288,298 +1292,383 @@ img, svg {
 
 /* Career Rewards */
 .sprint-rewards-block {
-  max-width: 44rem;
+  max-width: 48rem;
   margin-inline: auto;
-  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  margin-top: clamp(2.5rem, 4vw, 3rem);
+  margin-bottom: clamp(3.5rem, 5vw, 5rem);
   padding-inline: 1rem;
 }
 
 .sprint-rewards-label {
   display: block;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #71717a;
-  margin-bottom: 1.75rem;
-  position: relative;
-  padding-bottom: 1.25rem;
-}
-
-.sprint-rewards-label::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.25rem;
 }
 
 .sprint-tiers-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
+  border-top: 1px solid #26262a;
+  padding-top: 2rem;
+  padding-left: 0;
+  list-style: none;
   width: 100%;
-  text-align: left;
 }
 
 .sprint-tier-item {
-  border-left: 2px solid #43227d;
+  border-left: 2px solid rgba(124, 58, 237, 0.5);
   padding-left: 1rem;
+  text-align: left;
 }
 
 .sprint-tier-title {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  line-height: 1.4;
   margin-bottom: 0.25rem;
 }
 
 .sprint-tier-desc {
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #71717a;
   line-height: 1.5;
 }
 
-/* Monthly Contest Card */
-.sprint-contest-card {
-  max-width: 58rem;
+/* Monthly Contest Outer Card with Precision Gradient Frame */
+.sprint-contest-wrapper {
+  max-width: 64rem;
   margin-inline: auto;
-  background: #08090d;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  margin-top: clamp(3.5rem, 5vw, 5rem);
+  padding-inline: 1rem;
 }
 
-/* Card Header */
+.sprint-contest-border-wrap {
+  padding: 2px;
+  background: linear-gradient(155deg, 
+    #3d5a78 0%, 
+    #243652 18%, 
+    #152238 42%, 
+    #0c1422 68%, 
+    #06080f 100%
+  );
+  border-radius: 4px;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
+}
+
+.sprint-contest-card-inner {
+  background: #07070a;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.sprint-card-accent-top {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(91, 122, 173, 0.4), transparent);
+}
+
 .sprint-card-header {
-  padding: clamp(1.75rem, 3vw, 2.25rem) clamp(1.75rem, 3.5vw, 2.5rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #26262a;
+  padding: clamp(1.5rem, 2.5vw, 2rem) clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .sprint-card-badge {
-  font-size: 0.75rem;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #71717a;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .sprint-card-title {
-  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
-  font-weight: 700;
-  color: #ffffff;
+  font-size: clamp(1.5rem, 2.2vw, 1.65rem);
+  font-weight: 600;
   letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  color: #fafafa;
+  margin-bottom: 0.75rem;
 }
 
 .sprint-card-subtitle {
-  font-size: 0.9375rem;
-  color: #9ca3af;
-  line-height: 1.5;
+  max-width: 42rem;
+  font-size: clamp(0.875rem, 1.1vw, 0.9375rem);
+  line-height: 1.6;
+  color: #a1a1aa;
 }
 
-/* Card Body (2 Columns) */
+/* Card Body (2-Column Grid) */
 .sprint-card-body {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .sprint-card-body {
     grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
 }
 
-/* Left Column: Challenge status & details */
+/* Left Column with Exact Navy Gradient */
 .sprint-challenge-column {
-  padding: clamp(1.75rem, 3vw, 2.25rem) clamp(1.75rem, 3.5vw, 2.5rem);
+  position: relative;
+  border-bottom: 1px solid #26262a;
+  padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .sprint-challenge-column {
+    border-bottom: 0;
+    border-right: 1px solid #26262a;
+  }
+}
+
+.sprint-challenge-column-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(16, 29, 46, 0.9) 0%, #0a1018 50%, #07070a 100%);
+}
+
+@media (min-width: 1024px) {
+  .sprint-challenge-column-bg {
+    background: linear-gradient(180deg, rgba(13, 24, 40, 0.95) 0%, #0a1018 50%, #07070a 100%);
+  }
+}
+
+.sprint-challenge-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2.5rem;
+  height: 100%;
+  gap: 2rem;
 }
 
 .sprint-status-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(88, 28, 135, 0.2);
-  border: 1px solid rgba(139, 92, 246, 0.35);
-  padding: 0.3rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #c084fc;
-  margin-bottom: 1.5rem;
+  gap: 0.625rem;
+  border-radius: 0;
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  background: rgba(124, 58, 237, 0.08);
+  padding: 0.375rem 0.75rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c4b5fd;
+  width: fit-content;
+}
+
+.sprint-status-dot-wrap {
+  position: relative;
+  display: flex;
+  height: 8px;
+  width: 8px;
+  flex-shrink: 0;
 }
 
 .sprint-status-dot {
-  width: 6px;
-  height: 6px;
+  position: relative;
+  display: inline-flex;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
-  background: #a855f7;
-  box-shadow: 0 0 6px #a855f7;
+  background-color: #7c3aed;
 }
 
 .sprint-challenge-title {
   font-family: var(--font-mono), monospace;
-  font-size: clamp(1rem, 1.35vw, 1.1875rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   font-weight: 700;
-  line-height: 1.4;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  margin-top: 1.25rem;
 }
 
 .sprint-window-box {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 1.5rem;
+  border-top: 1px solid rgba(38, 38, 42, 0.8);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .sprint-window-label {
   font-family: var(--font-mono), monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 0.35rem;
+  color: #71717a;
 }
 
 .sprint-window-val {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #e2e8f0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.6;
+  color: #a1a1aa;
 }
 
 .sprint-window-note {
-  font-size: 0.8125rem;
-  color: #64748b;
-  margin-top: 0.2rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: #52525b;
 }
 
 /* Right Column: Inset darker background, Bounties + Leaderboard Preview */
 .sprint-bounties-column {
-  background: #050608;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(1.75rem, 3vw, 2.25rem) clamp(1.75rem, 3.5vw, 2.5rem);
+  padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
-}
-
-@media (min-width: 768px) {
-  .sprint-bounties-column {
-    border-top: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-  }
+  justify-content: center;
+  gap: 1.75rem;
+  background: #07070a;
 }
 
 .sprint-bounties-title {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #c084fc;
-  margin-bottom: 0.875rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+.sprint-trophy-icon {
+  color: rgba(124, 58, 237, 0.8);
+  width: 14px;
+  height: 14px;
 }
 
 .sprint-bounties-list {
+  margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.625rem;
+  list-style: none;
+  padding-left: 0;
 }
 
 .sprint-bounty-row {
   display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  font-size: 0.875rem;
-  color: #d1d5db;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 13px;
   line-height: 1.4;
+  color: #d4d4d8;
+}
+
+@media (min-width: 640px) {
+  .sprint-bounty-row {
+    font-size: 14px;
+  }
 }
 
 .sprint-bounty-bullet {
-  width: 4px;
+  margin-top: 0.4rem;
   height: 4px;
-  background-color: #a855f7;
-  border-radius: 1px;
+  width: 4px;
   flex-shrink: 0;
+  background-color: rgba(124, 58, 237, 0.8);
 }
 
 /* Leaderboard Preview Table */
-.sprint-leaderboard-group {
-  margin-top: auto;
-}
-
 .sprint-leaderboard-label {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 0.75rem;
-}
-
-.sprint-table-container {
-  width: 100%;
-  background: rgba(15, 17, 26, 0.5);
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.sprint-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.sprint-table th {
-  padding: 0.625rem 0.875rem;
-  font-size: 0.6875rem;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #64748b;
-  text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(255, 255, 255, 0.02);
+  color: #71717a;
 }
 
-.sprint-table td {
-  padding: 0.75rem 0.875rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  font-size: 0.8125rem;
+.sprint-table-wrapper {
+  font-family: var(--font-mono), monospace;
+  margin-top: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #2a2a32;
+  background: #0c0c10;
+  font-size: 12px;
 }
 
-.sprint-table tr:last-child td {
-  border-bottom: none;
+@media (min-width: 640px) {
+  .sprint-table-wrapper {
+    font-size: 14px;
+  }
+}
+
+.sprint-table-head {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 4.5rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #26262a;
+  background: #12121a;
+  padding: 0.625rem 0.75rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+@media (min-width: 640px) {
+  .sprint-table-head {
+    font-size: 11px;
+  }
+}
+
+.sprint-th-pts {
+  text-align: right;
+}
+
+.sprint-table-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 4.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(38, 38, 42, 0.8);
+  padding: 0.625rem 0.75rem;
+}
+
+.sprint-table-row:last-child {
+  border-bottom: 0;
 }
 
 .sprint-td-rank {
-  font-family: var(--font-mono), monospace;
-  color: #64748b;
+  font-variant-numeric: tabular-nums;
+  color: #71717a;
 }
 
 .sprint-td-name {
-  font-family: var(--font-mono), monospace;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.04em;
+  color: #a1a1aa;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sprint-td-pts {
-  font-family: var(--font-mono), monospace;
-  font-weight: 700;
-  color: #ffffff;
   text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #f4f4f5;
 }
 
 /* --------------------------------------------------------------------------
