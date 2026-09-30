@@ -320,7 +320,7 @@ Lighthouse testing was performed against the **deployed production version** of 
 
 | Category | Mobile | Desktop |
 | :--- | :---: | :---: |
-| **Performance** | **97** | **100** |
+| **Performance** | **98** | **100** |
 | **Accessibility** | **96** | **96** |
 | **Best Practices** | **92** | **92** |
 | **SEO** | **100** | **100** |
